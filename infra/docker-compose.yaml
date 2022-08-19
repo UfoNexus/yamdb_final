@@ -10,8 +10,9 @@ services:
       - ./.env
 
   web:
-    build: .
+    build: ..
     restart: always
+    image: ufonexus/yamdb:latest
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
