@@ -5,7 +5,6 @@ from django.contrib.auth.models import Group as DjangoGroup
 
 from .models import User, Group
 
-
 admin.site.unregister(DjangoGroup)
 
 

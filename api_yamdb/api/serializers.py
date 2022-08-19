@@ -6,9 +6,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from reviews.models import (
-    Category, Genre, Title, GenreTitle,
-    Comment, Review)
+from reviews.models import Category, Comment, Genre, GenreTitle, Review, Title
 
 
 class TokenObtainPairSerializer(serializers.Serializer):
@@ -24,8 +22,7 @@ class TokenObtainPairSerializer(serializers.Serializer):
                 'Некорректный код подтверждения'
             )
         refresh = RefreshToken.for_user(user)
-        data = {'access_token': str(refresh.access_token)}
-        return data
+        return {'access_token': str(refresh.access_token)}
 
 
 class UserSignUpSerializer(serializers.ModelSerializer):
@@ -158,9 +155,7 @@ class ReviewSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'Нельзя оставить больше одного обзора.')
 
-        review = Review.objects.create(**validated_data,)
-
-        return review
+        return Review.objects.create(**validated_data,)
 
     class Meta:
         model = Review
