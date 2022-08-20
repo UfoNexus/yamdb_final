@@ -1,6 +1,7 @@
 ![example event parameter](https://github.com/UfoNexus/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
 
 # Проект «api_yamdb»
+Ссыла на развернутый проект - 51.250.22.220
 
 ## 1 Описание
 
