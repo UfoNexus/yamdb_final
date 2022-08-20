@@ -22,7 +22,7 @@ jobs:
 
     - name: Test with flake8 and django tests
       env:
-      DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
       run: |
         python -m flake8
         pytest
