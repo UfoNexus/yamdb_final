@@ -4,6 +4,7 @@ services:
 
   db:
     image: postgres:13.0-alpine
+    restart: unless-stopped
     volumes:
       - /var/lib/postgresql/data/
     env_file:
@@ -11,7 +12,7 @@ services:
 
   web:
     build: ..
-    restart: always
+    restart: unless-stopped
     image: ufonexus/yamdb:latest
     volumes:
       - static_value:/app/static/
@@ -23,6 +24,7 @@ services:
 
   nginx:
     image: nginx:1.21.3-alpine
+    restart: unless-stopped
     ports:
       - "80:80"
     volumes:
