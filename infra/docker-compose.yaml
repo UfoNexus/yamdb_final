@@ -15,8 +15,8 @@ services:
     restart: unless-stopped
     image: ufonexus/yamdb:latest
     volumes:
-      - static_value:/app/static
-      - media_value:/app/media
+      - ../api_yamdb/static/:/app/static
+      - ../api_yamdb/media/:/app/media
     depends_on:
       - db
     env_file:
